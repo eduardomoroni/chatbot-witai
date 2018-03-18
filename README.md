@@ -12,4 +12,6 @@ WIT_ACCESS_TOKEN=<INSIRA_SEU_TOKEN_DE_ACESSO_AQUI>
 ```
 
 ## Passo a Passo
-- Setup Hubot: 
+- Setup Hubot[334a554]: https://github.com/eduardomoroni/chatbot-witai/commit/334a554fcd13be3a6df2c47250b9ec667247598d
+- Setup Wit.Ai[89350c2]: https://github.com/eduardomoroni/chatbot-witai/commit/89350c266e093b218c304dfc5c3d64e1ad7f418e
+
