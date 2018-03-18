@@ -1,3 +1,7 @@
+const { answer } = require('./entities');
+const { parse } = require('./wit');
+
 exports.answer = async message => {
-  return `Ola eu sou o Hubot, e recebi a sua mensagem: ${message}`;
+  const parsedMessage = await parse(message);
+  return answer(parsedMessage);
 };
