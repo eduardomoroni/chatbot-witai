@@ -1,8 +1,21 @@
-const { answerError, answerInvalidQuestion } = require('../answers');
+const {
+  answerError,
+  answerInvalidQuestion,
+  answerFarewell,
+  answerGreeting,
+} = require('../answers');
 
 const INVALID_ENTITY = 'Invalid Entity';
 
-const answerBasedOnEntities = () => {
+const answerBasedOnEntities = entities => {
+  if (entities.hasOwnProperty('greeting')) {
+    return answerGreeting();
+  }
+
+  if (entities.hasOwnProperty('farewells')) {
+    return answerFarewell();
+  }
+
   throw new Error(INVALID_ENTITY);
 };
 
