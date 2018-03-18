@@ -2,8 +2,8 @@ const { answerError, answerInvalidQuestion } = require('../answers');
 
 const INVALID_ENTITY = 'Invalid Entity';
 
-const answerBasedOnEntities = entities => {
-  throw new Error(`INVALID_ENTITY ${entities}`);
+const answerBasedOnEntities = () => {
+  throw new Error(INVALID_ENTITY);
 };
 
 const answer = parsedMessage => {
