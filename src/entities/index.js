@@ -1,14 +1,37 @@
-const { answerError, answerInvalidQuestion } = require('../answers');
+const {
+  answerError,
+  answerInvalidQuestion,
+  answerFarewell,
+  answerGreeting,
+} = require('../answers');
 
-const answer = () => {
+const INVALID_ENTITY = 'Invalid Entity';
+
+const answerBasedOnEntities = entities => {
+  if (entities.hasOwnProperty('greeting')) {
+    return answerGreeting();
+  }
+
+  if (entities.hasOwnProperty('farewells')) {
+    return answerFarewell();
+  }
+
+  throw new Error(INVALID_ENTITY);
+};
+
+const answer = parsedMessage => {
   try {
-    return answerInvalidQuestion();
+    return answerBasedOnEntities(parsedMessage.entities);
   } catch ({ message }) {
-    console.error(`Algo aconteceu durante analisar mensagem ${message}`);
+    if (message === INVALID_ENTITY) {
+      return answerInvalidQuestion();
+    }
+
     return answerError();
   }
 };
 
 module.exports = {
   answer,
+  INVALID_ENTITY,
 };
