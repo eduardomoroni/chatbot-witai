@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "npm run hubot",
-    "docker:start": "sh src/scripts/docker.sh",
+    "docker:start": "sh ./docker.sh",
     "lint:check": "eslint ./src/ ./tests/",
     "lint:fix": "npm run lint:check -- --fix",
     "prettier": "prettier --write 'src/**/*.js'",
